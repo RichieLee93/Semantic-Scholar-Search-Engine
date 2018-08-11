@@ -16,12 +16,12 @@ You can run the model via
 
     python main.py
 You will see the UI and type in the author name, like:
-![image](https://github.com/RichieLee93/Semantic-Scholar-Search-Engine/edit/master/1.jpg)
+![image](https://github.com/RichieLee93/Semantic-Scholar-Search-Engine/blob/master/1.png)
 
 Then click "search" button and the articles titles of the author will listed as:
-![image](https://github.com/RichieLee93/Semantic-Scholar-Search-Engine/edit/master/2.jpg)
+![image](https://github.com/RichieLee93/Semantic-Scholar-Search-Engine/blob/master/2.png)
 
 And also the word cloud of this author based on his paper titles will appear:
-![image](https://github.com/RichieLee93/Semantic-Scholar-Search-Engine/edit/master/3.jpg)
+![image](https://github.com/RichieLee93/Semantic-Scholar-Search-Engine/blob/master/3.png)
 
 For any authors who have same name, the engine will show the article and word cloud information for each of them independently as other pics in the folder show.
