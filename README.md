@@ -1,5 +1,5 @@
 # Semantic Scholar-Search-Engine
-Using SemanticScholarAPI to search published articles of the author, and create word cloud to show the frequence of some keywords appearred within the article titles.
+This engine is a command line based app which uses SemanticScholarAPI to search published articles of the author, and create word cloud to show the frequence of some keywords appearred within the article titles.
 
 ## Dev environment setup
 Python 3 is the main language used in this codebase.
