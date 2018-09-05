@@ -1,18 +1,17 @@
 from sys import platform as sys_pf
-if sys_pf == 'darwin':
-    import matplotlib
-    matplotlib.use("TkAgg")
-
 from SS import *
 from tkinter import *
 from nltk import FreqDist
 from tkinter import messagebox
 
+if sys_pf == 'darwin':
+    import matplotlib
+    matplotlib.use("TkAgg")
 
 def search_it():
-    """
-    print wordcloud and search results based on the paper titiles
+    """return search result and word cloud
     
+    print wordcloud and search results based on the paper titiles
     """
     author_id = get_author_id(str(name.get()))
     for aid in author_id:
@@ -32,7 +31,7 @@ def search_it():
 
 #end def
 
-
+# main function to create application form for the engine
 root = Tk() # create a now application form
 root.title('Semantic Scholar Search Engine') # set app name
 root.geometry('640x640+0+0') # set the app window size
