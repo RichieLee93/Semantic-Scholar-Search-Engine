@@ -1,15 +1,14 @@
-from bs4 import BeautifulSoup
-from selenium import webdriver
 import re
 import json
+import nltk
 import string
 import urllib.request
-
-import nltk
-from nltk.corpus import stopwords
-
-from wordcloud import WordCloud
 import matplotlib.pyplot as plt
+
+from nltk.corpus import stopwords
+from bs4 import BeautifulSoup
+from selenium import webdriver
+from wordcloud import WordCloud
 
 
 
@@ -18,7 +17,7 @@ def get_author_id(author_name):
     use selenium+bueatifulsoup libraries to get the authorid based on the input author name
     
     """
-    author_id_list=[]
+        author_id_list=[]
 
     if ' 'in author_name:
         Author_name = author_name.replace(' ','%20')
@@ -31,6 +30,7 @@ def get_author_id(author_name):
     for i in author_list:
         i = str(i)
         author_id_list.append(re.split('/|"',i)[6])
+        
     return author_id_list
 
 # end def
@@ -41,8 +41,8 @@ def get_author_paper(author_id):
     based on the authorid get from 'get_author_id' function, using Semetic Scholar API to get the paper titles of this author
     
     """
-    paper_title = []
-    paper_info = []
+        paper_title = []
+        paper_info = []
     url = 'http://api.semanticscholar.org/v1/author/' + author_id
     with urllib.request.urlopen(url) as f:
         data = json.loads(f.read().decode())
@@ -60,7 +60,7 @@ def preprocess(author_paper):
     preprocess the paper titles by some text clearning methods: discard stopwords, discard punctuations, tokennization, lemmatization. 
     
     """
-    toks_list = []
+        toks_list = []
     stop = stopwords.words('english')
     snowball = nltk.SnowballStemmer('english')
     for i in author_paper:
@@ -72,6 +72,7 @@ def preprocess(author_paper):
         toks_clean = [t for t in toks if len(t) >= 3]
         for t in toks_clean:
             toks_list.append(t)
+            
     return toks_list
 
 #end def
