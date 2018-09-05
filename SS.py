@@ -13,11 +13,11 @@ from wordcloud import WordCloud
 
 
 def get_author_id(author_name):
-    """
-    use selenium+bueatifulsoup libraries to get the authorid based on the input author name
+    """Return author ID
     
+    use selenium+bueatifulsoup libraries to get the authorid based on the input author name
     """
-        author_id_list=[]
+    author_id_list=[]
 
     if ' 'in author_name:
         Author_name = author_name.replace(' ','%20')
@@ -37,12 +37,12 @@ def get_author_id(author_name):
 
 
 def get_author_paper(author_id):
-    """
-    based on the authorid get from 'get_author_id' function, using Semetic Scholar API to get the paper titles of this author
+    """Return paper titles of the author
     
+    based on the authorid get from 'get_author_id' function, using Semetic Scholar API to get the paper titles of this author
     """
-        paper_title = []
-        paper_info = []
+    paper_title = []
+    paper_info = []
     url = 'http://api.semanticscholar.org/v1/author/' + author_id
     with urllib.request.urlopen(url) as f:
         data = json.loads(f.read().decode())
@@ -56,11 +56,11 @@ def get_author_paper(author_id):
 
 
 def preprocess(author_paper):
-    """
-    preprocess the paper titles by some text clearning methods: discard stopwords, discard punctuations, tokennization, lemmatization. 
+    """Return preprocessed tokens of the paper titles
     
+    preprocess the paper titles by some text clearning methods: discard stopwords, discard punctuations, tokennization, lemmatization. 
     """
-        toks_list = []
+    toks_list = []
     stop = stopwords.words('english')
     snowball = nltk.SnowballStemmer('english')
     for i in author_paper:
