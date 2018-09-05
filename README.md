@@ -7,7 +7,8 @@ We strongly encourage the use of Python [virtual environments](http://docs.pytho
 
     virtualenv venv -p /usr/bin/python3
     source venv/bin/activate
-
+    
+## Requirements 
 After which, you can install the required Python modules in the requirments.txt(some of them cannot be used pip straightly)
 ## Web Scrawling
 Due to the paper information of an author can only be searched by the author ID in Senamtic Scholar website, I do the web scrawling work first to scrap author ID number according to the author name. For the situation of duplicate names, I will list all the ID that meet the input name.
